@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  IOS-app_Gr6
-//
-//  Created by Beslind Mema on 12.2.24.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
