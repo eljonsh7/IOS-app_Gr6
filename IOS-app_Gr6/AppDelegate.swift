@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  IOS-app_Gr6
-//
-//  Created by Beslind Mema on 12.2.24.
-//
-
 import UIKit
 
 @main
