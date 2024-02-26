@@ -1,18 +1,29 @@
 import UIKit
 import SwiftUI
 
-// Assuming isLoggedIn is declared somewhere accessible to WelcomeView
-var isLoggedIn = false
+var isLoggedIn = true
+
+extension WelcomeView: ProfileViewDelegate {
+    func didLogout() {
+        isLoggedIn = false
+        // Show WelcomeView again
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let sceneDelegate = windowScene.delegate as? SceneDelegate {
+            sceneDelegate.window?.rootViewController = UIHostingController(rootView: WelcomeViewWrapper())
+        }
+    }
+}
 
 class WelcomeView: UIViewController {
     override func viewDidLoad() {
-        super.viewDidLoad()
         if isLoggedIn {
             let mainView = MainView()
             if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                let sceneDelegate = windowScene.delegate as? SceneDelegate {
                 sceneDelegate.window?.rootViewController = UIHostingController(rootView: mainView)
             }
+        } else {
+            super.viewDidLoad()
         }
     }
     

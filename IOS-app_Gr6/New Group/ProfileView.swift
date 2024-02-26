@@ -1,6 +1,13 @@
 import SwiftUI
 
+protocol ProfileViewDelegate: AnyObject {
+    func didLogout()
+}
+
+
 struct ProfileView: View {
+    weak var delegate: ProfileViewDelegate?
+    
     @State private var isEditingProfile = false
     @State private var showingLogoutAlert = false
     @State private var isLoggedOut = false // Added state variable to track logout
@@ -8,7 +15,6 @@ struct ProfileView: View {
     var body: some View {
         NavigationView {
             VStack {
-                // Profile image
                 Image(systemName: "person")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -33,6 +39,16 @@ struct ProfileView: View {
                 }) {
                     Text("Log out")
                 }
+                .alert(isPresented: $showingLogoutAlert) {
+                    Alert(
+                        title: Text("Logout"),
+                        message: Text("Are you sure you want to log out?"),
+                        primaryButton: .destructive(Text("Logout")) {
+                            delegate?.didLogout() // Call delegate method on logout
+                        },
+                        secondaryButton: .cancel()
+                    )
+                }
             )
             .navigationBarItems(trailing:
                 HStack {
@@ -47,15 +63,6 @@ struct ProfileView: View {
             )
             .sheet(isPresented: $isEditingProfile) {
                 EditProfileView(name: "admin", email: "admin@gmail.com", password: "admin")
-            }
-            .alert(isPresented: $showingLogoutAlert) {
-                Alert(
-                    title: Text("Logout"),
-                    message: Text("Are you sure you want to log out?"),
-                    primaryButton: .destructive(Text("Logout")) {
-                    },
-                    secondaryButton: .cancel()
-                )
             }
         }
     }
