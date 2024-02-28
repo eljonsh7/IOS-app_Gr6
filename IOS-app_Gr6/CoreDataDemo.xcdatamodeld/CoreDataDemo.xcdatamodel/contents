@@ -1,7 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="23C71" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
-    <entity name="Users" representedClassName="Users" syncable="YES" codeGenerationType="class">
-        <attribute name="isLoggedIn" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="uid" optional="YES" attributeType="String"/>
+    <entity name="Comments" representedClassName="Comments" syncable="YES">
+        <attribute name="comment_content" optional="YES" attributeType="String"/>
+        <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="post" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Posts" inverseName="comments" inverseEntity="Posts"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="comments" inverseEntity="Users"/>
+    </entity>
+    <entity name="Likes" representedClassName="Likes" syncable="YES">
+        <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <relationship name="post" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Posts" inverseName="likes" inverseEntity="Posts"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="likes" inverseEntity="Users"/>
+    </entity>
+    <entity name="Posts" representedClassName="Posts" syncable="YES">
+        <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="post_description" optional="YES" attributeType="String"/>
+        <attribute name="post_location" optional="YES" attributeType="String"/>
+        <attribute name="post_thumbnail" optional="YES" attributeType="String"/>
+        <attribute name="post_title" optional="YES" attributeType="String"/>
+        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comments" inverseName="post" inverseEntity="Comments"/>
+        <relationship name="created_by" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="posts" inverseEntity="Users"/>
+        <relationship name="likes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Likes" inverseName="post" inverseEntity="Likes"/>
+        <relationship name="region" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Regions" inverseName="posts" inverseEntity="Regions"/>
+    </entity>
+    <entity name="Regions" representedClassName="Regions" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="region_name" optional="YES" attributeType="String"/>
+        <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Posts" inverseName="region" inverseEntity="Posts"/>
+    </entity>
+    <entity name="Users" representedClassName="Users" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="password" optional="YES" attributeType="String"/>
+        <attribute name="profilePic" optional="YES" attributeType="String"/>
+        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comments" inverseName="user" inverseEntity="Comments"/>
+        <relationship name="likes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Likes" inverseName="user" inverseEntity="Likes"/>
+        <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Posts" inverseName="created_by" inverseEntity="Posts"/>
     </entity>
 </model>

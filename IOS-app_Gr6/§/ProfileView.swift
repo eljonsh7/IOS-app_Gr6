@@ -4,14 +4,12 @@ protocol ProfileViewDelegate: AnyObject {
     func didLogout()
 }
 
-
 struct ProfileView: View {
-    weak var delegate: ProfileViewDelegate?
-    
     @State private var isEditingProfile = false
     @State private var showingLogoutAlert = false
-    @State private var isLoggedOut = false // Added state variable to track logout
-
+    @State private var isLoggedOut = false
+    @State private var isNavigationActive = false
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -44,7 +42,7 @@ struct ProfileView: View {
                         title: Text("Logout"),
                         message: Text("Are you sure you want to log out?"),
                         primaryButton: .destructive(Text("Logout")) {
-                            delegate?.didLogout() // Call delegate method on logout
+                            logout()
                         },
                         secondaryButton: .cancel()
                     )
@@ -58,13 +56,26 @@ struct ProfileView: View {
                         Image(systemName: "pencil")
                             .font(.title)
                     }
-                    Spacer() // Add spacer to push buttons to edges
+                    Spacer()
                 }
             )
             .sheet(isPresented: $isEditingProfile) {
                 EditProfileView(name: "admin", email: "admin@gmail.com", password: "admin")
             }
         }
+        .background(
+            NavigationLink(
+                destination: FirstView(),
+                isActive: $isNavigationActive,
+                label: { EmptyView() }
+            ).hidden()
+        )
+    }
+    
+    private func logout() {
+        // Perform logout actions here
+        isLoggedOut = true
+        isNavigationActive = true // Activate navigation to WelcomeView
     }
 }
 
@@ -72,4 +83,9 @@ struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
     }
+}
+
+
+#Preview {
+    ProfileView()
 }

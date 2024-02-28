@@ -15,6 +15,24 @@ struct HomeView: View {
     
     var body: some View {
         ScrollView {
+            Text("Choose region: ").font(.headline)
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 10) {
+                    ForEach(1...7, id: \.self) { index in
+                        VStack {
+                            Image("0\(index)")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 200, height: 150)
+                                .clipped()
+                                .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
+                        }
+                    }
+                }
+                .padding(.horizontal, 10)
+                .padding(.vertical, 3)
+            }
+            
             ForEach(items, id: \.title) { item in
                 VStack {
                     GeometryReader { geometry in
