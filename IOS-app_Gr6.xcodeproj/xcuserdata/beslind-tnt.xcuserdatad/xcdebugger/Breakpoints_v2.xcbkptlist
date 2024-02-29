@@ -3,4 +3,198 @@
    uuid = "3331E3D9-823B-4A6E-80E3-58EFBADA688D"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A243A329-2ACE-4A39-A950-0C9DA30957BC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOS-app_Gr6/Navigation/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "fetchPosts(region:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A243A329-2ACE-4A39-A950-0C9DA30957BC - 3aff8faaaa14a9ea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (IOS_app_Gr6.Posts) -&gt; IOS_app_Gr6.HomeView.Item in IOS_app_Gr6.HomeView.fetchPosts(region: Swift.String) -&gt; ()"
+                  moduleName = "IOS-app_Gr6"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beslind-tnt/Documents/IOS-app_Gr6/IOS-app_Gr6/Navigation/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "288">
+               </Location>
+               <Location
+                  uuid = "A243A329-2ACE-4A39-A950-0C9DA30957BC - f639b6232a4c27fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_app_Gr6.HomeView.fetchPosts(region: Swift.String) -&gt; ()"
+                  moduleName = "IOS-app_Gr6"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beslind-tnt/Documents/IOS-app_Gr6/IOS-app_Gr6/Navigation/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "2272">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "696C3153-790E-4608-8347-9EA9F6CFC9C6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOS-app_Gr6/Navigation/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "fetchPosts(region:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "696C3153-790E-4608-8347-9EA9F6CFC9C6 - f639b6232a4c223b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_app_Gr6.HomeView.fetchPosts(region: Swift.String) -&gt; ()"
+                  moduleName = "IOS-app_Gr6"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beslind-tnt/Documents/IOS-app_Gr6/IOS-app_Gr6/Navigation/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "192">
+               </Location>
+               <Location
+                  uuid = "696C3153-790E-4608-8347-9EA9F6CFC9C6 - f639b6232a4c223b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_app_Gr6.HomeView.fetchPosts(region: Swift.String) -&gt; ()"
+                  moduleName = "IOS-app_Gr6"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beslind-tnt/Documents/IOS-app_Gr6/IOS-app_Gr6/Navigation/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "1796">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D5BCBDC0-5D41-4AC9-980D-5B4BAF97A348"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOS-app_Gr6/Navigation/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "fetchPosts(region:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D5BCBDC0-5D41-4AC9-980D-5B4BAF97A348 - 3aff8faaaa14a9ea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (IOS_app_Gr6.Posts) -&gt; IOS_app_Gr6.HomeView.Item in IOS_app_Gr6.HomeView.fetchPosts(region: Swift.String) -&gt; ()"
+                  moduleName = "IOS-app_Gr6"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beslind-tnt/Documents/IOS-app_Gr6/IOS-app_Gr6/Navigation/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "288">
+               </Location>
+               <Location
+                  uuid = "D5BCBDC0-5D41-4AC9-980D-5B4BAF97A348 - f639b6232a4c27fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_app_Gr6.HomeView.fetchPosts(region: Swift.String) -&gt; ()"
+                  moduleName = "IOS-app_Gr6"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beslind-tnt/Documents/IOS-app_Gr6/IOS-app_Gr6/Navigation/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "2272">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2DEBCE67-F4B7-477B-B7ED-CC13722F63F9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOS-app_Gr6/Navigation/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "fetchPosts(region:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2DEBCE67-F4B7-477B-B7ED-CC13722F63F9 - 3aff8faaaa14a9cb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (IOS_app_Gr6.Posts) -&gt; IOS_app_Gr6.HomeView.Item in IOS_app_Gr6.HomeView.fetchPosts(region: Swift.String) -&gt; ()"
+                  moduleName = "IOS-app_Gr6"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beslind-tnt/Documents/IOS-app_Gr6/IOS-app_Gr6/Navigation/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "300">
+               </Location>
+               <Location
+                  uuid = "2DEBCE67-F4B7-477B-B7ED-CC13722F63F9 - f639b6232a4c27fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_app_Gr6.HomeView.fetchPosts(region: Swift.String) -&gt; ()"
+                  moduleName = "IOS-app_Gr6"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/beslind-tnt/Documents/IOS-app_Gr6/IOS-app_Gr6/Navigation/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "2272">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

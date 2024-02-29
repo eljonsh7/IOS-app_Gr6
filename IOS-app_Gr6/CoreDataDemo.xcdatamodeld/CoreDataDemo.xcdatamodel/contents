@@ -14,8 +14,10 @@
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="likes" inverseEntity="Users"/>
     </entity>
     <entity name="Posts" representedClassName="Posts" syncable="YES">
+        <attribute name="comment_count" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="likes_count" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="post_description" optional="YES" attributeType="String"/>
         <attribute name="post_location" optional="YES" attributeType="String"/>
         <attribute name="post_thumbnail" optional="YES" attributeType="String"/>

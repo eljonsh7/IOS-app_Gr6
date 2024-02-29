@@ -1,7 +1,8 @@
 import SwiftUI
+import UIKit
 
 struct LoginView: View {
-    @State private var username: String = ""
+    @State private var email: String = ""
     @State private var password: String = ""
     @State private var isLoggedIn: Bool = false
     
@@ -9,7 +10,7 @@ struct LoginView: View {
         NavigationView {
             VStack {
                 Spacer()
-                TextField("Username", text: $username)
+                TextField("Username", text: $email)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                     .frame(height: 50)
@@ -22,7 +23,23 @@ struct LoginView: View {
                     .frame(height: 50)
                 
                 Button(action: {
-                    if(username == "admin" && password == "admin") {
+                    if !email.contains("@") {
+                        showAlert(message: "Invalid email format.")
+                    } else {
+                        guard let user = DBHelper.shared.loginUser(email: email, password: password) else {
+                            showAlert(message: "User not found.")
+                            return
+                        }
+                        UserDefaults.standard.set(email, forKey: "loggedInUserEmail")
+                        if let firstName = user.firstName {
+                            UserDefaults.standard.set(firstName, forKey: "loggedInUserFirstName")
+                        }
+                        if let lastName = user.lastName {
+                            UserDefaults.standard.set(lastName, forKey: "loggedInUserLastName")
+                        }
+                        if let userId = user.id {
+                            UserDefaults.standard.set(userId.uuidString, forKey: "loggedInUserId")
+                        }
                         isLoggedIn = true
                     }
                 }) {
@@ -35,6 +52,8 @@ struct LoginView: View {
                         .font(.headline)
                 }
                 .padding()
+
+
                 
                 Spacer()
                 
@@ -62,6 +81,13 @@ struct LoginView: View {
                 label: { EmptyView() }
             ).hidden()
         )
+        .navigationBarBackButtonHidden(true)
+    }
+    
+    private func showAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
     }
 }
 

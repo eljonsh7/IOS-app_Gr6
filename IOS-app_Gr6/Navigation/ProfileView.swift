@@ -1,31 +1,30 @@
 import SwiftUI
 
-protocol ProfileViewDelegate: AnyObject {
-    func didLogout()
-}
-
 struct ProfileView: View {
-    @State private var isEditingProfile = false
+    @State private var user: Users?
     @State private var showingLogoutAlert = false
     @State private var isLoggedOut = false
     @State private var isNavigationActive = false
-    
+    @State private var randomPhotoNumber = Int.random(in: 0...20)
+
     var body: some View {
         NavigationView {
             VStack {
-                Image(systemName: "person")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 120, height: 120)
-                    .clipShape(Circle())
-                    .padding(.top, 50)
-                    .foregroundColor(.blue)
-                
                 VStack(spacing: 8) {
-                    Text("John Doe")
+                    
+                    // Random photo
+                    if let imageURL = URL(string: "https://picsum.photos/800/600?random=\(randomPhotoNumber)") {
+                        AsyncImage(url: imageURL)
+                            .frame(width: 200, height: 200)
+                            .cornerRadius(50)
+                            .padding()
+                    }
+                    
+                    Text("\(user?.firstName ?? "") \(user?.lastName ?? "")")
                         .font(.title)
                         .foregroundColor(.blue)
-                    Text("john.doe@example.com")
+                    
+                    Text(user?.email ?? "default@gmail.com")
                         .font(.subheadline)
                         .foregroundColor(.gray)
                 }
@@ -50,18 +49,16 @@ struct ProfileView: View {
             )
             .navigationBarItems(trailing:
                 HStack {
-                    Button(action: {
-                        isEditingProfile = true
-                    }) {
+                    NavigationLink(destination: EditProfileView(firstName: user?.firstName ?? "", lastName: user?.lastName ?? "", profilePic: user?.profilePic ?? "")) {
                         Image(systemName: "pencil")
                             .font(.title)
                     }
                     Spacer()
                 }
             )
-            .sheet(isPresented: $isEditingProfile) {
-                EditProfileView(name: "admin", email: "admin@gmail.com", password: "admin")
-            }
+        }
+        .onAppear {
+            getUserData()
         }
         .background(
             NavigationLink(
@@ -72,10 +69,15 @@ struct ProfileView: View {
         )
     }
     
+    private func getUserData() {
+        if let loggedInUserId = UserDefaults.standard.string(forKey: "loggedInUserId") {
+            user = DBHelper.shared.getUser(userId: loggedInUserId)
+        }
+    }
+    
     private func logout() {
-        // Perform logout actions here
         isLoggedOut = true
-        isNavigationActive = true // Activate navigation to WelcomeView
+        isNavigationActive = true
     }
 }
 
