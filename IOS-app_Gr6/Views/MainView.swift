@@ -9,7 +9,7 @@ struct MainView: View {
                         Image(systemName: "house")
                         Text("Home")
                     }
-                MyPostView()
+                MyPostsView()
                     .tabItem {
                         Image(systemName: "slider.horizontal.3")
                         Text("My Posts")
